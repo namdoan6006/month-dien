@@ -433,31 +433,46 @@ input[type=number]{appearance:textfield;}
 /* ══════════════════════════════════════════
    RESPONSIVE MOBILE
 ══════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   RESPONSIVE MOBILE
+══════════════════════════════════════════ */
 @media(max-width:600px){
   /* Hide desktop tab bar, show bottom nav */
   .tabs-bar{display:none;}
   .mob-nav{display:flex;flex-direction:column;}
-  main{padding:1rem 1rem calc(5.5rem + env(safe-area-inset-bottom));}
+  main{padding:.85rem .85rem calc(5.5rem + env(safe-area-inset-bottom));}
   .mob-ct-sheet{display:block;}
   .mob-sheet-overlay{display:block;}
 
-  /* Header compact */
-  header{padding:.75rem 1rem;gap:.65rem;}
-  header h1{font-size:.95rem;}
+  /* Header: single row, no wrap */
+  header{padding:.6rem .9rem;gap:.5rem;flex-wrap:nowrap;}
+  header h1{font-size:.88rem;white-space:nowrap;}
   header p{display:none;}
-  .logo{width:32px;height:32px;font-size:1rem;}
+  .logo{width:30px;height:30px;font-size:.95rem;flex-shrink:0;}
+  /* Hide low-priority badges in header */
   .hbadge.gold{display:none;}
+  .hbadge.green{display:none;}
   .auto-badge{display:none;}
-  .hdr-right{gap:.38rem;}
+  /* hdr-right: no wrap, shrink text */
+  .hdr-right{gap:.3rem;flex-wrap:nowrap;flex-shrink:0;}
+  /* GS button shorter on mobile */
+  .gs-badge-btn{font-size:.58rem;padding:.18rem .42rem;gap:.25rem;}
+  #gs-header-label{display:none;}
+  /* Theme toggle smaller */
+  .theme-toggle-track{width:42px;height:22px;}
+  .theme-toggle-thumb{width:16px;height:16px;font-size:.65rem;}
+  [data-theme="light"] .theme-toggle-thumb{transform:translateX(20px);}
 
   /* Compact cards */
-  .card{padding:1rem;}
-  .stat-card{padding:.9rem;}
-  .stat-value{font-size:1.2rem;}
-  .grid-3{gap:.65rem;margin-bottom:1rem;}
+  .card{padding:.9rem;}
+  .stat-card{padding:.85rem;}
+  .stat-value{font-size:1.15rem;}
+  .grid-3{gap:.55rem;margin-bottom:.85rem;}
 
   /* Month grid 3 cols on mobile */
-  .month-grid{grid-template-columns:repeat(3,1fr);gap:.5rem;}
+  .month-grid{grid-template-columns:repeat(3,1fr);gap:.45rem;}
+  .mlabel{font-size:.58rem;}
+  .miw input{font-size:.8rem;padding:.44rem .5rem;}
 
   /* Result grid 3 cols */
   .result-grid{grid-template-columns:repeat(3,1fr);}
@@ -468,15 +483,19 @@ input[type=number]{appearance:textfield;}
   .ct-del-btn{margin-left:auto;}
 
   /* Chart shorter on mobile */
-  .chart-wrap{height:220px;}
+  .chart-wrap{height:200px;}
 
   /* Tariff layout single col */
   .tariff-layout{grid-template-columns:1fr;}
+  .tariff-layout > div:last-child{position:static!important;}
 
-  /* GS modal full screen */
-  .gs-modal{border-radius:18px;max-height:88vh;overflow-y:auto;}
+  /* GS modal scrollable */
+  .gs-modal{border-radius:16px;max-height:90vh;overflow-y:auto;}
   .gs-input-row{flex-direction:column;}
   .gs-input-row .btn-primary{width:100%;}
+
+  /* Stat cards horizontal on mobile */
+  .grid-3{grid-template-columns:1fr;}
 }
 
 /* ══════════════════════════════════════════
